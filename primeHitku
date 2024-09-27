@@ -1,0 +1,60 @@
+public class PrimeHitku{
+private static int range=529;
+private static ArrayList<Integer> hits = new ArrayList<Integer>();
+private static ArrayList<Integer> primes = new ArrayList<Integer>();
+public static void main(String args[]{
+int d=1;
+if(d<5){
+init();
+d=6;
+}
+while(d<range){
+if((d-2)%6==0){d=d+3;}
+else if(d%6==0){
+if(hits.contains(d+1) || d%5==4){
+d=d+5;
+}else{
+d=d+1;
+addPrime(d);
+d++;
+continue;
+}
+}
+int h=0;
+while(hits.contains(d)|| d%5==0){
+d=d+2;h++;
+if(h%2==0){d=d+2;}
+}
+addPrime(d);
+d++;
+}
+}
+
+private static void init(){
+addPrime(2);
+addPrime(3);
+addPrime(5);
+}
+
+private static void addPrime(int ku){
+if(ku<= range){
+primes.add(ku);
+System.out.print(ku+"; ");
+addHits(ku);
+}
+}
+
+private static void addHits(int ku){
+int newHit = 0;
+for (int j : primes) {
+newHit=j*ku;
+if(newHit<= range){
+hits.add(newHit );
+}
+}
+newHit=ku*ku*ku;
+if(newHit<= range){
+hits.add(newHit );
+}
+}
+}
