@@ -1,4 +1,4 @@
-This is the algorithm for finding prime numbers based on the new pattern I have found in the natural numbers.
+This is the algorithm for finding prime numbers I found while studying pattern in the natural numbers.
 
 I have implemented in java.
 
