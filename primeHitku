@@ -61,7 +61,7 @@ addPrime(5);
 
 
 private static void addHit2sForNewMiss(int ku){
-misses.add(d);
+misses.add(ku);
 int newHit2 = 0;
 for (int j : primes) {
 newHit2=j*ku;
@@ -69,14 +69,15 @@ if(newHit2<= range){
 hit2s.add(newHit2);
 }
 }
+addHitsForNewMiss(ku);
 }
 
-private static void addHit2sForNewPrime(int ku){
-int newHit2 = 0;
+private static void addHitsForNewMiss(int ku){
+int newHit = 0;
 for (int j : misses) {
-newHit2=j*ku;
-if(newHit2<= range){
-hit2s.add(newHit2);
+newHit=j*ku;
+if(newHit<= range){
+hits.add(newHit);
 }
 }
 }
@@ -86,7 +87,6 @@ if(ku<= range){
 primes.add(ku);
 System.out.print(ku+"; ");
 addHits(ku);
-addHit2sForNewPrime(ku);
 }
 }
 
