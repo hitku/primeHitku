@@ -1,3 +1,5 @@
+package com.hitku;
+
 import java.util.ArrayList;
 
 public class PrimeHitku {
@@ -41,7 +43,7 @@ public class PrimeHitku {
 				}
 				d = d + 2;
 				h++;
-				//if(primes.get(hi)==h){d=d+2;hi++;h=0;}
+				// if(primes.get(hi)==h){d=d+2;hi++;h=0;}
 				if (h % 2 == 0) {
 					d = d + 2;
 				}
