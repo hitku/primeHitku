@@ -62,11 +62,14 @@ addPrime(5);
 
 private static void addHit2sForNewMiss(int ku){
 misses.add(ku);
+//hits.remove((Integer)ku);
 int newHit2 = 0;
 for (int j : primes) {
 newHit2=j*ku;
 if(newHit2<= range){
 hit2s.add(newHit2);
+}else{
+break;
 }
 }
 addHitsForNewMiss(ku);
@@ -78,6 +81,8 @@ for (int j : misses) {
 newHit=j*ku;
 if(newHit<= range){
 hits.add(newHit);
+}else{
+break;
 }
 }
 }
@@ -96,6 +101,8 @@ for (int j : primes) {
 newHit=j*ku;
 if(newHit<= range){
 hits.add(newHit );
+}else{
+break;
 }
 }
 }
