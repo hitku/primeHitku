@@ -1,3 +1,4 @@
+import java.util.*;
 public class PrimeHitku{
 private static int range=529;
 private static ArrayList<Integer> hits = new ArrayList<Integer>();
@@ -43,6 +44,11 @@ if(h%2==0){d=d+2;}
 doesContainHit=hits.contains(d);
 }
 addPrime(d);
+for(int j=primes.get(primes.size()-2);j<d;j++){
+if(!hits.remove((Integer)j)){
+hit2s.remove((Integer)j);
+}
+}
 d++;
 }
 
@@ -62,7 +68,6 @@ addPrime(5);
 
 private static void addHit2sForNewMiss(int ku){
 misses.add(ku);
-//hits.remove((Integer)ku);
 int newHit2 = 0;
 for (int j : primes) {
 newHit2=j*ku;
