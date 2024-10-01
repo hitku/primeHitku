@@ -12,7 +12,7 @@ boolean doesContainHit=false;
 int d=1;
 if(d<5){
 init();
-d=6;
+d=5;
 }
 while(d<range){
 if((d-2)%6==0){
@@ -44,7 +44,7 @@ if(h%2==0){d=d+2;}
 doesContainHit=hits.contains(d);
 }
 addPrime(d);
-for(int j=primes.get(primes.size()-2);j<d;j++){
+for(int j=primes.get(primes.size()-2);j<d;j=j+2){
 if(!hits.remove((Integer)j)){
 hit2s.remove((Integer)j);
 }
@@ -62,7 +62,6 @@ System.out.print("\n duration: "+  duration+"; ");
 private static void init(){
 addPrime(2);
 addPrime(3);
-addPrime(5);
 }
 
 
