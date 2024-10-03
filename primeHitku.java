@@ -2,7 +2,7 @@ import java.util.*;
 public class PrimeHitku{
 private static int range=529;
 private static ArrayList<Integer> hits = new ArrayList<Integer>();
-private static ArrayList<Integer> hit2s = new ArrayList<Integer>();
+private static HashSet<Integer> hit2s = new HashSet<Integer>();
 private static ArrayList<Integer> misses = new ArrayList<Integer>();
 private static ArrayList<Integer> primes = new ArrayList<Integer>();
 public static void main(String args[]){
@@ -44,7 +44,7 @@ if(h%2==0){d=d+2;}
 doesContainHit=hits.contains(d);
 }
 addPrime(d);
-for(int j=primes.get(primes.size()-2);j<d;j=j+2){
+for(int j=primes.get(primes.size()-2)+2;j<d;j=j+2){
 if(!hits.remove((Integer)j)){
 hit2s.remove((Integer)j);
 }
@@ -68,8 +68,8 @@ addPrime(3);
 private static void addHit2sForNewMiss(int ku){
 misses.add(ku);
 int newHit2 = 0;
-for (int j : primes) {
-newHit2=j*ku;
+for(int j=2;j<primes.size();j++){
+newHit2=primes.get(j)*ku;
 if(newHit2<= range){
 hit2s.add(newHit2);
 }else{
@@ -101,8 +101,8 @@ addHits(ku);
 
 private static void addHits(int ku){
 int newHit = 0;
-for (int j : primes) {
-newHit=j*ku;
+for(int j=2;j<primes.size();j++){
+newHit=primes.get(j)*ku;
 if(newHit<= range){
 hits.add(newHit );
 }else{
