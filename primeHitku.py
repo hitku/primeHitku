@@ -6,26 +6,6 @@ misses = []
 primes = []
 doesContainHit=0
 
-def addHits(ku):
- newHit = 0
- for j in range(2,len(primes)):
-  newHit=primes[j]*ku
-  if newHit<= _range:
-   hits.append(newHit )
-  else:
-   break
-
-def addPrime(ku):
- if ku<= _range:
-  primes.append(ku)
-  print(f" {ku};",end="")
-  addHits(ku)
-
-
-def init():
- addPrime(2)
- addPrime(3)
-
 def addHitsForNewMiss(ku):
  newHit = 0
  for j in misses:
@@ -45,6 +25,26 @@ def addHit2sForNewMiss(ku):
   else:
    break
  addHitsForNewMiss(ku)
+
+def addHits(ku):
+ newHit = 0
+ for j in range(2,len(primes)):
+  newHit=primes[j]*ku
+  if newHit<= _range:
+   hits.append(newHit )
+  else:
+   break
+
+def addPrime(ku):
+ if ku<= _range:
+  primes.append(ku)
+  print(f" {ku};",end="")
+  addHits(ku)
+
+
+def init():
+ addPrime(2)
+ addPrime(3)
 
 d=1
 if d<5:
@@ -76,7 +76,7 @@ while d<_range:
     d+=2
   doesContainHit=hits.count(d)
  addPrime(d)
- for j in range(primes[len(primes)-2]+2, d, 2):
+ for j in range(primes[-2]+2, d, 2):
   hits.remove(j) if hits.count(j)>0 else hit2s.discard(j)
  d+=1
 print(f"\nprime count:  {len(primes)}; ")
