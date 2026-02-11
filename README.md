@@ -1,4 +1,4 @@
-This is the algorithm for finding prime numbers I found while studying pattern in the natural numbers.
+This is the algorithm for finding prime numbers I discovered while studying pattern in the natural numbers.
 
 I have implemented in java,python,javascript.
 
@@ -47,5 +47,5 @@ Repeat these 5 steps, till n is less than given range upper limit.
 The numbers in the prime list are all prime numbers.
 
 
-
-please sent any suggestion or issues to me at hiteshdurgani@gmail.com
+Algorithm is under development.
+Please share any suggestion or issues at hiteshdurgani@gmail.com
