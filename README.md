@@ -1,4 +1,4 @@
-This is the algorithm for finding prime numbers I discovered while studying pattern in the natural numbers.
+This is the algorithm for finding prime numbers
 
 I have implemented in java,python,javascript.
 
